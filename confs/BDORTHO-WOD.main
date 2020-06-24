@@ -1,0 +1,21 @@
+[ logger ]
+log_level = DEBUG
+
+[ pyramid ]
+
+persistent = false
+
+pyr_name = BDORTHO-WOD
+pyr_desc_path = /pyramids/BDORTHO
+
+tms_name = UTM20W84MART_2.5m.tms
+tms_path = /etc/rok4/config/tileMatrixSet
+
+compression = jpg
+bitspersample = 8
+sampleformat = uint
+samplesperpixel = 3
+photometric = rgb
+interpolation = bicubic
+
+color = 255,255,255
