@@ -3,6 +3,6 @@ MAINTAINER Théo Satabin <theo.satabin@ign.fr>
 
 WORKDIR /
 
-ADD pyramids/ALTI /pyramids/ALTI
+ADD . /pyramids/ALTI
 
 VOLUME /pyramids/ALTI

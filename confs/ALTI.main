@@ -13,7 +13,7 @@ tms_path = /etc/rok4/config/tileMatrixSet
 ; informations relatives aux images
 compression = zip
 
-interpolation = lanczos
+interpolation = nn
 
 photometric = gray
 sampleformat = float
