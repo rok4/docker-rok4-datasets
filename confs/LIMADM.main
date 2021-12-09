@@ -2,12 +2,11 @@
 filepath_conf = /confs/LIMADM.json
 
 [ pyramid ]
-pyr_data_path = /pyramids
-pyr_desc_path = /pyramids/LIMADM
+pyr_data_path = /pyramids/LIMADM
 pyr_name_new = LIMADM
 
 ; informations sur le TMS
-tms_name = PM.tms
+tms_name = PM.json
 tms_path = /etc/rok4/config/tileMatrixSet
 
 image_width = 16

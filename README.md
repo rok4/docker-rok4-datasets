@@ -15,15 +15,28 @@ Jeux disponibles sous forme d'images Docker sur [Docker Hub](https://hub.docker.
 
 Volume à monter : /pyramids/ALTI
 
+## rok4/dataset:pente-martinique
+
+1 pyramide, 1 couche
+
+* Type : pyramide raster
+    * Zone : Martinique
+    * Nom de couche : PENTE
+    * Tile Matrix Set : PM
+    * Niveau du bas : 13 (20m)
+    * Source des données : [Alti (250m)](https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#bd-alti)
+
+Volume à monter : /pyramids/ALTI
+
 ## rok4/dataset:bdortho5m-martinique
 
-1 pyramides, 2 couches
+1 pyramides, 1 couches
 
 * Type : pyramide raster
     * Zone : Martinique
     * Nom de couche : BDORTHO
     * Tile Matrix Set : PM
-    * Niveau du bas : 15
+    * Niveau du bas : 15 (7m)
     * Source des données : [BDOrtho (5m)](https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html#bd-ortho-5-m)
 
 Volume à monter : /pyramids/BDORTHO
@@ -56,16 +69,18 @@ Usage : `generate.sh [<tag image rok4generation>]`
 
 Le script déclenche le lancement des générations de toutes les pyramides :
 
-* la pyramide présente dans l'image `rok4/dataset:bdortho5m-martinique`, dans le dossier `pyramids/BDORTHO`. Les données ne sont pas dans le projet mais sont disponibles à l'URL [suivante](https://wxs.ign.fr/vmqhn9nk3nolzlhytv1nfx63/telechargement/prepackage/BDORTHO-JP2-5M_PACK_D972_2017-01-01%24BDORTHO_2-0_RVB-5M00_JP2-E100_RGAF09UTM20_D972_2017-01-01/file/BDORTHO_2-0_RVB-5M00_JP2-E100_RGAF09UTM20_D972_2017-01-01.7z) (130Mo)
-* la pyramide présente dans l'image `rok4/dataset:bdalti-martinique`, dans le dossier `pyramids/ALTI`
-* la pyramide présente dans l'image `rok4/dataset:geofla-martinique`, dans le dossier `pyramids/LIMADM`
+* la pyramide présente dans l'image `rok4/dataset:bdortho5m-martinique-4`, dans le dossier `pyramids/BDORTHO`. Les données ne sont pas dans le projet mais sont disponibles à l'URL [suivante](https://wxs.ign.fr/vmqhn9nk3nolzlhytv1nfx63/telechargement/prepackage/BDORTHO-JP2-5M_PACK_D972_2017-01-01%24BDORTHO_2-0_RVB-5M00_JP2-E100_RGAF09UTM20_D972_2017-01-01/file/BDORTHO_2-0_RVB-5M00_JP2-E100_RGAF09UTM20_D972_2017-01-01.7z) (130Mo)
+* la pyramide présente dans l'image `rok4/dataset:pente-martinique-4`, dans le dossier `pyramids/PENTE`
+* la pyramide présente dans l'image `rok4/dataset:bdalti-martinique-4`, dans le dossier `pyramids/ALTI`
+* la pyramide présente dans l'image `rok4/dataset:geofla-martinique-4`, dans le dossier `pyramids/LIMADM`
 
 La création d'un descripteur de couche par défaut se fait automatiquement à la fin de la génération, à côté du descripteur de pyramide. Cela permet de pouvoir directement conteneurisé le dossier et qu'il soit utilisable avec l'image de ROK4SERVER
 
 ## Compilation des images
 
 ```bash
-docker build -t rok4/dataset:bdortho5m-martinique -f BDORTHO.Dockerfile pyramids/BDORTHO
-docker build -t rok4/dataset:geofla-martinique -f LIMADM.Dockerfile pyramids/LIMADM
-docker build -t rok4/dataset:bdalti-martinique -f ALTI.Dockerfile pyramids/ALTI
+docker build -t rok4/dataset:bdortho5m-martinique-4 -f BDORTHO.Dockerfile pyramids/BDORTHO
+docker build -t rok4/dataset:pente-martinique-4 -f PENTE.Dockerfile pyramids/PENTE
+docker build -t rok4/dataset:geofla-martinique-4 -f LIMADM.Dockerfile pyramids/LIMADM
+docker build -t rok4/dataset:bdalti-martinique-4 -f ALTI.Dockerfile pyramids/ALTI
 ``` 

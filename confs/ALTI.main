@@ -2,12 +2,11 @@
 filepath_conf = /confs/ALTI.datasources
 
 [ pyramid ]
-pyr_data_path = /pyramids
-pyr_desc_path = /pyramids/ALTI
+pyr_data_path = /pyramids/ALTI
 pyr_name_new = ALTI
 
 ; informations sur le TMS
-tms_name = UTM20W84MART_1M_MNT.tms
+tms_name = UTM20W84MART_1M_MNT.json
 tms_path = /etc/rok4/config/tileMatrixSet
 
 ; informations relatives aux images
